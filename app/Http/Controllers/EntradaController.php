@@ -55,9 +55,7 @@ class EntradaController extends Controller
     
     // Remover a entrada atual
     $entrada->delete();
-
-
-    // ALTERE PARA entradas.index QUANDO AJEITAR
+    
     return redirect()->route('entradas.index')->with('success', 'Entrada finalizada e registrada no histórico!');
 }
 

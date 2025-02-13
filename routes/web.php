@@ -60,12 +60,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/home', function () {
     return view('home');
 })->name('home');
 
-Route::get('/inicial', function () {
-    return view('inicial');
-})->name('inicial');
 
