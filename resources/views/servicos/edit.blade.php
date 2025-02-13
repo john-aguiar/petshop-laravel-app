@@ -1,0 +1,30 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h1 class="mb-4">Editar Serviço</h1>
+
+    <form action="{{ route('servicos.update', $servico->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+
+        <div class="mb-3">
+            <label for="nome" class="form-label">Nome do Serviço</label>
+            <input type="text" class="form-control" id="nome" name="nome" value="{{ $servico->nome }}" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="descricao" class="form-label">Descrição</label>
+            <textarea class="form-control" id="descricao" name="descricao">{{ $servico->descricao }}</textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="preco" class="form-label">Preço</label>
+            <input type="number" step="0.01" class="form-control" id="preco" name="preco" value="{{ $servico->preco }}" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <a href="{{ route('servicos.index') }}" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+@endsection
