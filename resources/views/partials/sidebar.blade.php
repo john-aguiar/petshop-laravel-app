@@ -23,25 +23,28 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('despesas.index') }}">
-                <i class="bi bi-wallet"></i> Despesas
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link text-white" href="{{ route('servicos.index') }}">
                 <i class="bi bi-gear"></i> Serviços
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('historico-servicos.index') }}">
+            <a class="nav-link text-white" href="{{ route('historico.index') }}">
                 <i class="bi bi-clock-history"></i> Histórico de Serviços
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-white" href="{{ route('agendamentos.index') }}">
-                <i class="bi bi-calendary"></i> Agendamentos
+            <a class="nav-link text-white" href="{{ route('entradas.index') }}">
+                <i class="bi bi-clipboard-plus"></i> Entradas
             </a>
         </li>
+
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="{{ route('agendamentos.index') }}">
+                <i class="bi bi-calendar-date"></i> Agendamentos
+            </a>
+        </li>
+
     </ul>
     
     <hr>

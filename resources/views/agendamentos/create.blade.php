@@ -38,16 +38,24 @@
 
         <div class="mb-3">
             <label class="form-label">Serviços</label>
-            <div id="servicosLista">
+            <!-- <div id="servicosLista">
                 @foreach($servicos as $servico)
                     <div class="form-check">
-                        <input class="form-check-input servico-checkbox" type="checkbox" name="servico_id[]" value="{{ $servico->id }}" data-valor="{{ $servico->preco }}"  data-descricao="{{ $servico->descricao }}">
+                        <input class="form-check-input servico-checkbox" type="checkbox" name="servico_id" value="{{ $servico->id }}" data-valor="{{ $servico->preco }}"  data-descricao="{{ $servico->descricao }}">
                         <label class="form-check-label">
                             {{ $servico->nome }} (R$ {{ number_format($servico->preco, 2, ',', '.') }}) - {{ $servico->descricao }}
                         </label>
                     </div>
                 @endforeach
-            </div>
+            </div> -->
+            <select name="servico_id" id="servico" class="form-select" required>
+                <option value="">Selecione</option>
+                    @foreach($servicos as $servico)
+                        <option value="{{ $servico->id }}" data-preco="{{ $servico->preco }}">
+                            {{ $servico->nome }} - R$ {{ number_format($servico->preco, 2, ',', '.') }}
+                        </option>
+                    @endforeach
+            </select>
         </div>
 
         <div class="mb-3">
@@ -98,6 +106,12 @@ document.querySelectorAll('.servico-checkbox').forEach(checkbox => {
 });
 
     // Filtra os pets pelo cliente selecionado
+    document.getElementById("servico").addEventListener("change", function() {
+        let selectedOption = this.options[this.selectedIndex];
+        let preco = selectedOption.getAttribute("data-preco") || "0.00";
+        document.getElementById("valor").value = parseFloat(preco).toFixed(2);
+    });
+
     document.getElementById('cliente_id').addEventListener('change', function() {
         let clienteId = this.value;
         let petSelect = document.getElementById('pet_id');

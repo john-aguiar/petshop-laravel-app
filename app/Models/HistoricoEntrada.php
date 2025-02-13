@@ -1,12 +1,14 @@
 <?php
-
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Entrada extends Model
+class HistoricoEntrada extends Model
 {
+    use HasFactory;
 
+    protected $table = 'historico_entradas';
     protected $fillable = ['pet_id', 'cliente_id', 'servico_id', 'valor', 'entrada', 'saida'];
 
     public function pet()

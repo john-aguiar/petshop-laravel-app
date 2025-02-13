@@ -24,7 +24,7 @@
                 <div class="col-md-3">
                     <div class="card bg-light shadow-sm">
                         <div class="card-body text-center">
-                            <h5 class="card-title text-success fw-bold">Pets</h5>
+                            <h5 class="card-title text-danger fw-bold">Pets</h5>
                             <p class="card-text fs-3 fw-bold text-dark">{{ $totalPets }}</p>
                         </div>
                     </div>
@@ -44,12 +44,13 @@
                 <div class="col-md-3">
                     <div class="card bg-light shadow-sm">
                         <div class="card-body text-center">
-                            <h5 class="card-title text-danger fw-bold">Despesas</h5>
+                            <h5 class="card-title text-success fw-bold">Faturamento</h5>
                             <p class="card-text fs-3 fw-bold text-dark">R$ {{ number_format($totalDespesas, 2, ',', '.') }}</p>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </main>
     </div>
 </div>

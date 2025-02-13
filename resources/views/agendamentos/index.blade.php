@@ -26,7 +26,6 @@
                 <tr>
                     <td>{{ $agendamento->cliente->nome }}</td>
                     <td>{{ $agendamento->pet->nome }}</td>
-                    <td>{{ $agendamento->servico->nome }}</td>
                     <td>{{ $agendamento->data }}</td>
                     <td>{{ $agendamento->horario }}</td>
                     <td>R$ {{ number_format($agendamento->valor, 2, ',', '.') }}</td>
